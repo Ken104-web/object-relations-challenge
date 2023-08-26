@@ -3,12 +3,14 @@
 # returns all reviews
 
 class Review:
-    all_reviews = ()
+    all_reviews = []
 
     def __init__(self, customer, restaurant, rating):
+        self.customer = customer
+        self.restaurant = restaurant
         self.rating = rating
-        super().__init__(customer, restaurant)
-    
+        Review.all_reviews.append(self)
+
     def give_rating(self):
         return self.rating
     
