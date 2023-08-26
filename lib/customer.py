@@ -24,18 +24,5 @@ class Customer:
         return cls.all_customers
 
     
-# Create instances of the Customer class
-customer1 = Customer("Kenneth", "Mwangi")
-customer2 = Customer("Lily", "Nyamvula")
 
-# Use the methods to get information about the customers
-given_name = customer1.given_name()
-family_name = customer1.family_name()
-full_name = customer1.full_name()
-all_customers = Customer.all()
-
-print("First Name:", given_name)
-print("Last Name:", family_name)
-print("Full Name:", full_name)
-print("All Customers:", all_customers)
 
