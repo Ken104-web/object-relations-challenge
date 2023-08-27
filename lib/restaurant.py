@@ -1,5 +1,5 @@
 # should be initialized with a name as a string 
-from review import Review
+from lib.review import Review
 class Restaurant:
     #  store all restaurant instances
     all_reviews = []
