@@ -4,7 +4,7 @@
 from lib.restaurant import Restaurant
 class Customer:
     all_customers = []
-
+ 
     def __init__(self, name, family_name):
         self.first_name = name
         self.last_name = family_name
@@ -28,10 +28,34 @@ class Customer:
         #  using set compression to get unique restaurants
         return list({restaurant for restaurant, _ in self.reviews})
 
-
+    # return the total num of reviews a customer has authorized
+    def num_reviews(self):
+        return len(self.reviews)
+       
     @classmethod
     def all(cls):
         return cls.all_customers
+    
+    #  given a string of a **full name**, returns the **first customer** whose full name matches
+    @classmethod
+    def find_by_name(cls, name):
+        for customer in cls.all_customers:
+            if customer.full_name() == name:
+                return customer
+            else:
+                return None
+    
+    @classmethod
+    def find_all_by_given_name(cls, name):
+        matching_customers = []
+        for customer in cls.all_customers:
+            if customer.given_name() == name:
+                matching_customers.append(customer)
+            return matching_customers
+
+
+        
+
 
     
 
