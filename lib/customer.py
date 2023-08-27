@@ -1,7 +1,6 @@
 # initialize the customers by thier given name and family name/ first and last names
 # combine both the first name and last name to get their full names
 # Return a list of all customer instances
-from lib.restaurant import Restaurant
 class Customer:
     all_customers = []
  
