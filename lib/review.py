@@ -9,6 +9,8 @@ class Review:
         self._customer = customer
         self._restaurant = restaurant
         self.rating = rating
+        customer.reviews.append(self)
+        restaurant.reviews.append(self)
         Review.all_reviews.append(self)
 
     def give_rating(self):

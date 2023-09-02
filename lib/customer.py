@@ -1,17 +1,18 @@
 # initialize the customers by thier given name and family name/ first and last names
 # combine both the first name and last name to get their full names
 # Return a list of all customer instances
+from review import Review
 class Customer:
     all_customers = []
  
     def __init__(self, name, family_name):
-        self.first_name = name
+        self.given_name = name
         self.last_name = family_name
         self.reviews = []
         Customer.all_customers.append(self)
 
-    def given_name(self):
-        return self.first_name
+    # def given_name(self):
+    #     return self.first_name
 
     def  family_name(self): 
          return self.last_name
@@ -25,6 +26,7 @@ class Customer:
 
     def reviewed_restaurants(self):
         #  using set compression to get unique restaurants
+        return(list({review.get_restaurant() for review in Review.all_reviews if review.customer == self}))
         return list({restaurant for restaurant, _ in self.reviews})
 
     # return the total num of reviews a customer has authorized
